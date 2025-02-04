@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="_blank">
-    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="NestJS Logo" />
-  </a>
-</p>
+
 
 # HNG Stage 1 Task 🚀
 
@@ -44,21 +40,20 @@ pnpm run start:prod
 ### ✅ Health Check
 **Endpoint:**
 ```http
-GET https://hng-12-stage-1-943t.onrender.com/api/health
+GET [https://hng-12-stage-1-943t.onrender.com/api/health](https://hng-stage-1-dbcq.onrender.com/)
 
 ```
 **Response:**
 ```json
 {
- "message":"Server is active 🚀🚀",
- "live":"Tue, 04 Feb 2025 10:24:12 GMT"
+ "message":"Welcome to the Number Classification API! Use /api/classify-number?number=<your_number> to classify a number.",
 }
 ```
 
 ### 👤 Number Information
 **Endpoint:**
 ```http
-GET https://hng-12-stage-1-943t.onrender.com/api/classify-number?number=314
+GET [https://hng-12-stage-1-943t.onrender.com/api/classify-number?number=314](https://hng-stage-1-dbcq.onrender.com/api/classify-number?number=314)
 ```
 **Response:**
 ```json
@@ -82,5 +77,5 @@ Looking for talented developers? Check out these hiring pages:
 
 ---
 
-🎯 **Follow the project on GitHub:** [masterchief-Dave/hng-12-stage-1](https://github.com/masterchief-Dave/hng-12-stage-1) 🚀
+🎯 **Follow the project on GitHub:** [masterchief-Dave/hng-12-stage-1](https://github.com/masterchief-Dave/hng-stage-next) 🚀
 
