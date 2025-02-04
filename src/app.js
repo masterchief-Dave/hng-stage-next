@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const classifyNumber = require("./helpers/classifyNumber");
+const classifyNumber = require("./lib/classifyNumber");
 
 const app = express();
 

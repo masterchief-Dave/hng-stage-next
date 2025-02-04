@@ -12,7 +12,7 @@
     "url": "git+https://github.com/AdeGneus/number-classification-api.git"
   },
   "keywords": [],
-  "author": "Wasiu Bakare",
+  "author": "David Bodunrin",
   "license": "ISC",
   "homepage": "https://github.com/AdeGneus/number-classification-api#readme",
   "dependencies": {

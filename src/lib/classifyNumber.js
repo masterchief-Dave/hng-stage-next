@@ -2,8 +2,8 @@ const axios = require("axios");
 const {
   isPrime,
   isPerfectNumber,
-  getProperties,
-  getDigitSum,
+  getNumberProperties,
+  digitSum,
 } = require("./mathUtils");
 
 const classifyNumber = async (req, res) => {
@@ -27,7 +27,7 @@ const classifyNumber = async (req, res) => {
 
   try {
     const funFactResponse = await axios.get(
-      `http://numbersapi.com/${num}/math?json`,
+      `http://numbersapi.com/${num}/math?json`
     );
     const funFact = funFactResponse.data.text;
 
@@ -35,8 +35,8 @@ const classifyNumber = async (req, res) => {
       number: num,
       is_prime: isPrime(num),
       is_perfect: isPerfectNumber(num),
-      properties: getProperties(num),
-      digit_sum: getDigitSum(num),
+      properties: getNumberProperties(num),
+      digit_sum: digitSum(num),
       fun_fact: funFact,
     });
   } catch (error) {

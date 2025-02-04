@@ -28,7 +28,7 @@ const isPrime = (num) => {
 
 const getNumberProperties = (num) => {
   const properties = [];
-  if (isArmstrong(num)) properties.push("armstrong");
+  if (armstrongNumber(num)) properties.push("armstrong");
   properties.push(num % 2 === 0 ? "even" : "odd");
   return properties;
 };
