@@ -8,21 +8,16 @@
  * @example isPrime(3) = true
  */
 const isPrime = (num) => {
-  // raise corresponding errors upon invalid inputs
-  if (num <= 0 || !Number.isInteger(num)) {
-    throw new Error("only natural numbers are supported");
+  if (num < 2) {
+    return false;
   }
 
-  // handle input being 1
-  if (num === 1) return false;
-
-  // iterate from 2 to the square root of num to find a factor
-  // return false upon finding a factor
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) return false;
+  for (let i = 2; i * i <= num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
   }
 
-  // if the entire loop runs without finding a factor, return true
   return true;
 };
 
@@ -62,18 +57,11 @@ const isPerfectNumber = (num) => {
  * @example armstrongNumber(10) = false
  */
 const armstrongNumber = (num) => {
-  if (typeof num !== "number" || num <= 0) return false;
-
-  let compNum = 0;
-  let cloneNum = num;
-  const numOfDigits = Math.floor(1 + Math.log10(num));
-
-  while (cloneNum > 0) {
-    compNum += Math.pow(cloneNum % 10, numOfDigits);
-    cloneNum = Math.floor(cloneNum / 10);
-  }
-
-  return compNum === num;
+  if (num < 0) return false;
+  const digits = num.toString().split("").map(Number);
+  const power = digits.length;
+  const sum = digits.reduce((acc, digit) => acc + Math.pow(digit, power), 0);
+  return sum === num;
 };
 
 /**
