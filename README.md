@@ -1,107 +1,86 @@
-# Number Classification API
+<p align="center">
+  <a href="http://nestjs.com/" target="_blank">
+    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="NestJS Logo" />
+  </a>
+</p>
 
-## Project Description
+# HNG Stage 1 Task 🚀
 
-This API classifies a given number based on its mathematical properties and provides a fun fact about it. The API returns whether a number is:
+## 📌 Description
+This is a simple project built for HNG Stage 1.
 
-- **Prime**
-- **Perfect**
-- **Armstrong**
-- **Odd or Even**
-- **Digit Sum**
-- **A fun fact** about the number (fetched from [Numbers API](http://numbersapi.com))
-
-## Technology Stack
-
-- **Node.js** (JavaScript runtime)
-- **Express.js** (Web framework)
-- **Yarn** (Package manager)
-- **CORS** (Middleware to handle cross-origin requests)
-- **Axios** (For fetching fun facts)
-
-## API Endpoint
-
-### **GET /api/classify-number**
-
-This endpoint classifies a number and returns its mathematical properties.
-
-**Example Request:**
-
-```curl
-GET /api/classify-number?number=371
+--- 
+## ⚙️ Add `.env` variables
+```bash
+NUMBER_API_URL=""
+PORT=
 ```
 
-### **Response Format**
+## 🛠️ Project Setup
+To install dependencies, run:
 
-#### ✅ **200 OK**
-
-```json
-{
-  "number": 371,
-  "is_prime": false,
-  "is_perfect": false,
-  "properties": ["armstrong", "odd"],
-  "digit_sum": 11,
-  "fun_fact": "371 is an Armstrong number because 3^3 + 7^3 + 1^3 = 371"
-}
+```bash
+pnpm install
 ```
-
-#### ❌ **400 Bad Request**
-
-```json
-{
-  "number": "<number>",
-  "error": true
-}
-```
-
-### **Error Handling**
-
-- **Invalid Inputs (`hello`, `32abc`, etc.)** → Returns `{ "number": "<input>", "error": true }`
-- **Missing `number` query (`/api/classify-number`)** → Returns `{ "error": true }`
-- **Empty Parameter (`?number=`)** → Returns `{ "number": "", "error": true }`
 
 ---
 
-## Setup Instructions
+## 🚀 Running the Project
 
-### **1. Clone the Repository**
-
-```sh
-git clone https://github.com/AdeGneus/number-classification-api.git
-cd number-classification-api
+### Development Mode
+```bash
+pnpm run start:dev
 ```
 
-### **2. Install Dependencies**
-
-```sh
-yarn install
+### Production Mode
+```bash
+pnpm run start:prod
 ```
 
-### **3. Run the API Locally**
+---
 
-#### **Development Mode (with Auto-restart)**
+## 🌐 API Endpoints & Responses
 
-```sh
-yarn dev
+### ✅ Health Check
+**Endpoint:**
+```http
+GET https://hng-12-stage-1-943t.onrender.com/api/health
+
+```
+**Response:**
+```json
+{
+ "message":"Server is active 🚀🚀",
+ "live":"Tue, 04 Feb 2025 10:24:12 GMT"
+}
 ```
 
-This runs the API using **Node.js built-in watch mode** (`node --watch index.js`), which automatically restarts on file changes.
-
-#### **Production Mode**
-
-```sh
-yarn start
+### 👤 Number Information
+**Endpoint:**
+```http
+GET https://hng-12-stage-1-943t.onrender.com/api/classify-number?number=314
+```
+**Response:**
+```json
+{
+ "number":371,
+ "is_prime":false,
+ "is_perfect":false,
+ "properties":["armstrong","odd"],
+ "digit_sum":11,
+ "fun_fact":"371 is a boring number."
+}
 ```
 
-## Deployment
+---
 
-This API is deployed and accessible at:
+## 🔗 Hire Developers
+Looking for talented developers? Check out these hiring pages:
 
-```sh
-https://number-classification-api-nine.vercel.app/
-```
 
-## License
+- 🔥 [Hire Node.js Developers](https://hng.tech/hire/nodejs-developers)
 
-This project is licensed under the ISC License.
+---
+
+🎯 **Follow the project on GitHub:** [masterchief-Dave/hng-12-stage-1](https://github.com/masterchief-Dave/hng-12-stage-1) 🚀
+
