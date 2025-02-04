@@ -10,7 +10,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({
     message:
-      "Welcome to the Number Classification API! Use /api/classify-number?number=<your_number> to classify a number.",
+      "Use /api/classify-number?number=<your_number> to classify a number.",
   });
 });
 app.get("/api/classify-number", classifyNumber);

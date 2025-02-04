@@ -9,12 +9,11 @@ const {
 const classifyNumber = async (req, res) => {
   const { number } = req.query;
 
-  if (
-    !number ||
-    typeof number !== "string" ||
-    number.trim() === "" ||
-    isNaN(number)
-  ) {
+  if (!number) {
+    return res.status(400).json({ number: null, error: true });
+  }
+
+  if (typeof number !== "string" || number.trim() === "" || isNaN(number)) {
     return res.status(400).json({ number, error: true });
   }
 
@@ -23,7 +22,7 @@ const classifyNumber = async (req, res) => {
     return res.status(400).json({ number, error: true });
   }
 
-  const num = parseInt(number, 10);
+  const num = parseInt(Math.abs(number), 10);
 
   try {
     const funFactResponse = await axios.get(
