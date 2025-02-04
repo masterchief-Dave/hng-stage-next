@@ -26,19 +26,20 @@ const classifyNumber = async (req, res) => {
 
   try {
     const funFactResponse = await axios.get(
-      `http://numbersapi.com/${num}/math?json`
+      `http://numbersapi.com/${Math.abs(num)}/math?json`
     );
     const funFact = funFactResponse.data.text;
 
     res.json({
-      number: num,
-      is_prime: isPrime(num),
-      is_perfect: isPerfectNumber(num),
-      properties: getNumberProperties(num),
+      number: number,
+      is_prime: isPrime(parseInt(number)),
+      is_perfect: isPerfectNumber(parseInt(number)),
+      properties: getNumberProperties(parseInt(number)),
       digit_sum: digitSum(num),
       fun_fact: funFact,
     });
   } catch (error) {
+    console.log({ error });
     res.status(500).json({
       number: num,
       error: true,
