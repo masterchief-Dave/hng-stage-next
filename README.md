@@ -6,11 +6,6 @@
 This is a simple project built for HNG Stage 1.
 
 --- 
-## ⚙️ Add `.env` variables
-```bash
-NUMBER_API_URL=""
-PORT=
-```
 
 ## 🛠️ Project Setup
 To install dependencies, run:
