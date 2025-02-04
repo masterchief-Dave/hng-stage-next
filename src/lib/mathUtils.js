@@ -75,17 +75,10 @@ const armstrongNumber = (num) => {
  */
 
 const digitSum = (num) => {
-  if (num < 0 || !Number.isInteger(num)) {
-    throw new Error("only natural numbers are supported");
-  }
-
-  let sum = 0;
-  while (num != 0) {
-    sum += num % 10;
-    num = Math.floor(num / 10);
-  }
-
-  return sum;
+  return Math.abs(num)
+    .toString()
+    .split("")
+    .reduce((sum, digit) => sum + Number(digit), 0);
 };
 
 module.exports = {

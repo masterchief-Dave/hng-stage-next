@@ -31,17 +31,16 @@ const classifyNumber = async (req, res) => {
     const funFact = funFactResponse.data.text;
 
     res.json({
-      number: number,
+      number: parseInt(number),
       is_prime: isPrime(parseInt(number)),
       is_perfect: isPerfectNumber(parseInt(number)),
       properties: getNumberProperties(parseInt(number)),
-      digit_sum: digitSum(num),
+      digit_sum: digitSum(number),
       fun_fact: funFact,
     });
   } catch (error) {
-    console.log({ error });
     res.status(500).json({
-      number: num,
+      number: parseInt(number),
       error: true,
     });
   }
