@@ -35,7 +35,7 @@ pnpm run start:prod
 ### ✅ Health Check
 **Endpoint:**
 ```http
-GET [https://hng-12-stage-1-943t.onrender.com/api/health](https://hng-stage-1-dbcq.onrender.com/)
+GET https://hng-stage-1-dbcq.onrender.com
 
 ```
 **Response:**
@@ -48,7 +48,7 @@ GET [https://hng-12-stage-1-943t.onrender.com/api/health](https://hng-stage-1-db
 ### 👤 Number Information
 **Endpoint:**
 ```http
-GET [https://hng-12-stage-1-943t.onrender.com/api/classify-number?number=314](https://hng-stage-1-dbcq.onrender.com/api/classify-number?number=314)
+GET https://hng-stage-1-dbcq.onrender.com/api/classify-number?number=371
 ```
 **Response:**
 ```json
